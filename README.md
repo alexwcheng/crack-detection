@@ -4,12 +4,10 @@ This README.md lists project members, goals, responsibilities, and a summary of 
 ### Project File Summary
 
    - <b>[README.md](README.md)</b> - a summary of all contents in this repository.
-   - <b>[/Data](/Data)</b> - All data called from the Twitter API.
    - <b>[/Images](/Images)</b> - Exported plots, etc...
    - <b>[/Jupyter_Notebooks](/Jupyter_Notebooks)</b> - All Jupyter Notebooks for this project.
-   - <b>[/Project_Prompt](/Project_Prompt)</b> - The prompt for this project.
-   - <b>[/Python_Files](/Python_Files)</b> - .py files loaded / imported in the Jupyter Notebooks.
-   - <b>[/Final_Presentation](/Final_Presentation)</b> - A non-technical presentation of our project.
+   - <b>[/Py_Files](/Py_Files)</b> - .py files loaded / imported in the Jupyter Notebooks.
+   - <b>[/Final_Presentation](/Final_Presentation)</b> - A non-technical presentation of the project.
    
 ### Project Members
 
