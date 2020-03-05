@@ -33,6 +33,9 @@ The goal of this project is to create an automated tool that can automatically c
 
 1. Gather a dataset of images of general construction progress photos, and photos focusing on common building materials seen on construction sites. The data collection includes a combination of actual construction photos, web-scraped photos, and personal photography).
 
+2. Define the evaluation metrics for success. The most important thing is to capture ALL of the deficiencies, no matter what.
+Missing deficiencies is potentially a safety issue. Arguably, the most important metric to evaluate "success" would be to measure RECALL and FALSE NEGATIVE RATE. However, we don't want to just classify all images as "deficient"...then we aren't saving architects and engineers any time or effort! So maybe we would consider using F1-Score instead since it balances accuracy and recall so the model doesn't just classify everything as deficient.
+
 2. Create, train, and fine-tune CNN for "general" vs. "specific" classification.
 
 3. Create, train, and fine-tune CNN for material type classification.
