@@ -1,5 +1,6 @@
 # Construction Deficiency Detection
-This README.md lists project members, goals, responsibilities, and a summary of the files in the repository.
+
+![Deficiency-Detection-Demo](Web_Application/Deficiency-Detection-Demo.gif)
 
 ### Project File Summary
 
