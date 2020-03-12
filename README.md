@@ -1,7 +1,10 @@
 # Construction Deficiency Detection
+___
+
 
 ![Deficiency-Detection-Demo](Web_Application/Deficiency-Detection-Demo.gif)
 
+___
 ### Project File Summary
 
    - <b>[README.md](README.md)</b> - a summary of all contents in this repository.
@@ -11,17 +14,19 @@
    - <b>[/Final_Presentation](/Final_Presentation)</b> - A non-technical presentation of the project.
    - <b>[/Web_Application](/Web_Application)</b> - Code + video demo of a simple proof-of-concept web-app that detects cracking.
    
+___
 ### Project Members
 
    - <b>[Alex Cheng](https://github.com/alexwcheng)</b>
 
+___
 ### Project Scenario
 
 Architects and engineers visit construction sites regularly to observe general progress and identify deficient work. Photography is the primary way to document conditions on-site. If the project is large, then thousands of photos can be taken on a single visit. After the site visit, a field report is made that records general observations and identifies any deficient work. It is very time-consuming to to find all of the images that capture deficient work in order to generate a detailed and thorough field report.
 
 So to make life easier, an automated tool powered by a Convolutional Neural Network (CNN) can help detect obviously deficient work for us. This tool is not intended to replace manual review of construction images completely, but would speed up the process significantly. In a large design firm, this tool would save thousands of hours of labor per year. This in turn saves hundreds of thousands of dollars, which means more profit and less mind-numbing work to be done by already overworked professionals.
 
-
+___
 ### Project Goals
 
 The goal of this project is to create an automated tool that can automatically classify 3 things about a construction photo:
@@ -30,7 +35,7 @@ The goal of this project is to create an automated tool that can automatically c
 2. What type of material is in the photo?
 3. Is this material "cracked" or "not cracked"?
 
-
+___
 ### Methodology 
 
 1. Gather a dataset of images of general construction progress photos, and photos focusing on common building materials seen on construction sites. The data collection includes a combination of actual construction photos, web-scraped photos, and personal photography).
@@ -49,7 +54,13 @@ Missing deficiencies is potentially a safety issue. Arguably, the most important
 6. Analyze confusion matrix results of the CNN models. Determine accuracy, precision, recall, and F1 score metrics. Determine a ratio of how often the model is correctly classifying "cracked" materials. That is what we care about most.
 
 7. Design a presentation to cleanly and simply explain the findings of the modeling process.
+___
 
-### Project Responsibilities
+### CNN Architecture
 
-   -  All project responsibilities were completed by <b>[Alex Cheng](https://github.com/alexwcheng)</b>.
+___
+### CNN Metrics
+
+___
+### Conclusions
+
