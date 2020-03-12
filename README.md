@@ -37,52 +37,76 @@ The goal of this project is to create an automated tool that can rapidly classif
 ### Data 
 
 • I gathered a dataset of roughly 4,000 images of general construction progress photos, and photos focusing on common building materials seen on construction sites, including brick, concrete, drywall, glass, and tile. The dataset was built using combination of actual construction photos, web-scraped photos, and personal photography. 
+
 • In building this unique dataset, I tried to keep the dataset balanced in terms of "cracked" versus "not cracked" images. Since people take pictures of construction deficiencies at many different scales, I endeavored to collect a variety of photos with cracks of all sizes. 
+
 • One challenge to overcome is to have the crack be large or prominent enough in the photo for a human (or a computer) to detect it. So images of both "obvious" and "subtle" cracking were included in the dataset. 
+
 • Another challenge is "noise" in the photo - like people, or construction tools, or other visual distractions. So a range of images were included that introduce various amounts of visual "noise" to ensure that the CNN would pick up on cracking in both simple and more complex scenes.
 
 #
 ### Evaluation Metrics
 
 • Next, I had to define the evaluation metrics for success. 
+
 • Missing deficiencies is potentially a safety issue. So arguably, the most important metric to evaluate "success" would be to measure **RECALL** and/or **FALSE NEGATIVE RATE.** 
+
 • However, we don't want to just classify all images as "deficient"...because then we wouldn't be saving architects and engineers any time or effort! 
+
 • So **F1-Score** is likely the best metric to measure instead since it balances precision and recall.
+
 • To explain performance non-technically, I used accuracy since most already have an understanding of this metric.
 
 #
 ### CNN Building + Training
 
 • I built and trained 3 CNNs:
+
    • One for "general" vs. "specific" classification.
+   
    • One for material type classification.
+   
    • One for "cracked" vs. "not cracked" classification.
 
 #
 ### CNN Metrics
 
 • I analyzed confusion matrix results of the CNN models, then determined accuracy, precision, recall, and F1 score metrics.
+
 • Next, I plotted prediction probabilities for each type of classification. 
+
 • Prediction probabiities are important in crack detection. Architects and engineers want to be certain that they are not missing any significant, potentially dangerous deficiencies. Otherwise, there will be a significant professional liability.
+
 • So I determined a prediction probability "cutoff" point at which an image would need to be manually checked by a person, since the model is not "confident" enough in its prediction for architects and engineers to trust the prediction completely.
 
 #
 ### Conclusions
 
 • For every 1,000 images:
+
    • At a 90% prediction probability cutoff, we only have to manually check 140 images. (86% reduction of work.)
+   
    • At a 95% prediction probability cutoff, we only have to manually check 200 images. (80% reduction of work.)
+   
    • At a 99% prediction probability cutoff, we only have to manually check 310 images. (69% reduction of work.)
 
 #
 ### Future Work
 
 • Improvements:
+
    • Use images with more “visual noise” to train on
+   
    • Use images capturing more types of materials.
+   
    • Allow model to train longer (more rounds of practice).
+   
 • Future Work:
+
    • Build more models to detect other types of deficiencies besides cracking.
+   
    • Combine these models to build a tool that can detect all types of deficiencies.
+   
    • In the future, instead of people, maybe drones could take photos of construction sites!
+   
    • Using a more robust version of this tool, drones could auto-identify deficient work!
