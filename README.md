@@ -22,43 +22,67 @@
 
 Architects and engineers visit construction sites regularly to observe general progress and identify deficient work. Photography is the primary way to document conditions on-site. If the project is large, then thousands of photos can be taken on a single visit. After the site visit, a field report is made that records general observations and identifies any deficient work. It is very time-consuming to to find all of the images that capture deficient work in order to generate a detailed and thorough field report.
 
-So to make life easier, an automated tool powered by a Convolutional Neural Network (CNN) can help detect obviously deficient work for us. This tool is not intended to replace manual review of construction images completely, but would speed up the process significantly. In a large design firm, this tool would save thousands of hours of labor per year. This in turn saves hundreds of thousands of dollars, which means more profit and less mind-numbing work to be done by already overworked professionals.
+So to make life easier, an automated tool powered by a Convolutional Neural Network (CNN) can help detect obviously deficient work for us - in particular, cracking. This tool is not intended to replace manual review of construction images completely, but would speed up the process significantly. In a large design firm, this tool would save thousands of hours of labor per year. This in turn saves hundreds of thousands of dollars, which means more profit and less mind-numbing work to be done by already overworked professionals.
 
 #
 ### Project Goals
 
-The goal of this project is to create an automated tool that can automatically classify 3 things about a construction photo:
+The goal of this project is to create an automated tool that can rapidly classify 3 things about a construction photo:
 
 1. Is the photo "general" or "specific"?
 2. What type of material is in the photo?
 3. Is this material "cracked" or "not cracked"?
 
 #
-### Methodology 
+### Data 
 
-1. Gather a dataset of images of general construction progress photos, and photos focusing on common building materials seen on construction sites. The data collection includes a combination of actual construction photos, web-scraped photos, and personal photography).
-
-2. Define the evaluation metrics for success. The most important thing is to capture ALL of the deficiencies, no matter what.
-Missing deficiencies is potentially a safety issue. Arguably, the most important metric to evaluate "success" would be to measure RECALL and FALSE NEGATIVE RATE. However, we don't want to just classify all images as "deficient"...then we aren't saving architects and engineers any time or effort! So maybe we would consider using F1-Score instead since it balances accuracy and recall so the model doesn't just classify everything as deficient.
-
-2. Create, train, and fine-tune CNN for "general" vs. "specific" classification.
-
-3. Create, train, and fine-tune CNN for material type classification.
-
-4. Create, train, and fine-tune CNN for "cracked" vs. "not cracked" classification.
-
-5. Analyze prediction probabilities for each type of classification. Determine a prediction probability "cutoff" point at which an image would need to be manually checked by a person, since the model is not "confident" enough in its prediction.
-
-6. Analyze confusion matrix results of the CNN models. Determine accuracy, precision, recall, and F1 score metrics. Determine a ratio of how often the model is correctly classifying "cracked" materials. That is what we care about most.
-
-7. Design a presentation to cleanly and simply explain the findings of the modeling process.
+• I gathered a dataset of roughly 4,000 images of general construction progress photos, and photos focusing on common building materials seen on construction sites, including brick, concrete, drywall, glass, and tile. The dataset was built using combination of actual construction photos, web-scraped photos, and personal photography. 
+• In building this unique dataset, I tried to keep the dataset balanced in terms of "cracked" versus "not cracked" images. Since people take pictures of construction deficiencies at many different scales, I endeavored to collect a variety of photos with cracks of all sizes. 
+• One challenge to overcome is to have the crack be large or prominent enough in the photo for a human (or a computer) to detect it. So images of both "obvious" and "subtle" cracking were included in the dataset. 
+• Another challenge is "noise" in the photo - like people, or construction tools, or other visual distractions. So a range of images were included that introduce various amounts of visual "noise" to ensure that the CNN would pick up on cracking in both simple and more complex scenes.
 
 #
-### CNN Architecture
+### Evaluation Metrics
+
+• Next, I had to define the evaluation metrics for success. 
+• Missing deficiencies is potentially a safety issue. So arguably, the most important metric to evaluate "success" would be to measure **RECALL** and/or **FALSE NEGATIVE RATE.** 
+• However, we don't want to just classify all images as "deficient"...because then we wouldn't be saving architects and engineers any time or effort! 
+• So **F1-Score** is likely the best metric to measure instead since it balances precision and recall.
+• To explain performance non-technically, I used accuracy since most already have an understanding of this metric.
+
+#
+### CNN Building + Training
+
+• I built and trained 3 CNNs:
+   • One for "general" vs. "specific" classification.
+   • One for material type classification.
+   • One for "cracked" vs. "not cracked" classification.
 
 #
 ### CNN Metrics
 
+• I analyzed confusion matrix results of the CNN models, then determined accuracy, precision, recall, and F1 score metrics.
+• Next, I plotted prediction probabilities for each type of classification. 
+• Prediction probabiities are important in crack detection. Architects and engineers want to be certain that they are not missing any significant, potentially dangerous deficiencies. Otherwise, there will be a significant professional liability.
+• So I determined a prediction probability "cutoff" point at which an image would need to be manually checked by a person, since the model is not "confident" enough in its prediction for architects and engineers to trust the prediction completely.
+
 #
 ### Conclusions
 
+• For every 1,000 images:
+   • At a 90% prediction probability cutoff, we only have to manually check 140 images. (86% reduction of work.)
+   • At a 95% prediction probability cutoff, we only have to manually check 200 images. (80% reduction of work.)
+   • At a 99% prediction probability cutoff, we only have to manually check 310 images. (69% reduction of work.)
+
+#
+### Future Work
+
+• Improvements:
+   • Use images with more “visual noise” to train on
+   • Use images capturing more types of materials.
+   • Allow model to train longer (more rounds of practice).
+• Future Work:
+   • Build more models to detect other types of deficiencies besides cracking.
+   • Combine these models to build a tool that can detect all types of deficiencies.
+   • In the future, instead of people, maybe drones could take photos of construction sites!
+   • Using a more robust version of this tool, drones could auto-identify deficient work!
