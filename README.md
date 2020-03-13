@@ -20,9 +20,9 @@
 #
 ### Project Scenario
 
-Architects and engineers visit construction sites regularly to observe general progress and identify deficient work. Photography is the primary way to document conditions on-site. If the project is large, then thousands of photos can be taken on a single visit. After the site visit, a field report is made that records general observations and identifies any deficient work. It is very time-consuming to to find all of the images that capture deficient work in order to generate a detailed and thorough field report.
+Architects and engineers visit construction sites regularly to observe general progress and identify deficient work. Photography is the primary way to document conditions on-site. If the project is large, then thousands of photos can be taken on a single visit. After the site visit, a field report is made that records general observations and identifies any deficient work. It is very time-consuming to find all of the images that capture deficient work in order to generate a detailed and thorough field report.
 
-So to make life easier, an automated tool powered by a Convolutional Neural Network (CNN) can help detect obviously deficient work for us - in particular, cracking. This tool is not intended to replace manual review of construction images completely, but would speed up the process significantly. In a large design firm, this tool would save thousands of hours of labor per year. This in turn saves hundreds of thousands of dollars, which means more profit and less mind-numbing work to be done by already overworked professionals.
+So to make life easier, an automated tool powered by a Convolutional Neural Network (CNN) can help detect obviously deficient work for us - in particular, cracking. This tool is not intended to replace manual review of construction images completely but would speed up the process significantly. In a large design firm, this tool would save thousands of hours of labor per year. This, in turn, saves hundreds of thousands of dollars, which means more profit and less mind-numbing work to be done by already overworked professionals.
 
 #
 ### Project Goals
@@ -83,7 +83,11 @@ I analyzed confusion matrix results of the CNN models, then determined accuracy,
 #
 ### App Demo
 
+**Full app demo with narrative on YouTube: https://www.youtube.com/watch?v=rFzwX8IaSnM**
+
 ![Deficiency-Detection-Demo](Web_Application/Deficiency-Detection-Demo.gif)
+
+
 
 #
 ### Future Work
