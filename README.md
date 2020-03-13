@@ -6,11 +6,11 @@
 ### Project File Summary
 
    - <b>[README.md](README.md)</b> - a summary of all contents in this repository.
-   - <b>[/Images](/Images)</b> - Exported plots, etc...
-   - <b>[/Jupyter_Notebooks](/Jupyter_Notebooks)</b> - All Jupyter Notebooks for this project.
-   - <b>[/Py_Files](/Py_Files)</b> - .py files loaded / imported in the Jupyter Notebooks.
-   - <b>[/Final_Presentation](/Final_Presentation)</b> - A non-technical presentation of the project.
-   - <b>[/Web_Application](/Web_Application)</b> - Code + video demo of a simple proof-of-concept web-app that detects cracking.
+   - <b>[Images](/Images)</b> - Exported plots, etc...
+   - <b>[Jupyter_Notebooks](/Jupyter_Notebooks)</b> - All Jupyter Notebooks for this project.
+   - <b>[Py_Files](/Py_Files)</b> - .py files loaded / imported in the Jupyter Notebooks.
+   - <b>[Final_Presentation](/Final_Presentation)</b> - A non-technical presentation of the project.
+   - <b>[Web_Application](/Web_Application)</b> - Code + video demo of a simple proof-of-concept web-app that detects cracking.
    
 #
 ### Project Members
