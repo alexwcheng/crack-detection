@@ -1,4 +1,4 @@
-# Construction Deficiency Detection
+# Deficiency Detection
 
 ![Title-Slide](/Images/Slides/Title-Slide.jpg)
 
