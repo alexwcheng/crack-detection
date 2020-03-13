@@ -69,7 +69,13 @@ Next, I had to define the evaluation metrics for success. Missing deficiencies i
 #
 ### CNN Metrics
 
-I analyzed confusion matrix results of the CNN models, then determined accuracy, precision, recall, and F1 score metrics. Next, I plotted prediction probabilities for each type of classification. Prediction probabiities are important in crack detection. Architects and engineers want to be certain that they are not missing any significant, potentially dangerous deficiencies. Otherwise, there will be a significant professional liability. So I determined a prediction probability "cutoff" point at which an image would need to be manually checked by a person, since the model is not "confident" enough in its prediction for architects and engineers to trust the prediction completely.
+I analyzed confusion matrix results of the CNN models, then determined accuracy, precision, recall, and F1 score metrics. Next, I plotted prediction probabilities for each type of classification. Prediction probabiities are important in crack detection. Architects and engineers want to be certain that they are not missing any significant, potentially dangerous deficiencies. Otherwise, there will be a significant professional liability. So I determined a prediction probability "cutoff" point at which an image would need to be manually checked by a person, since the model is not "confident" enough in its prediction for architects and engineers to trust the prediction completely. The decided cutoff was **90% prediction probability.** 
+
+• For "general" versus "specific" classification (2 classes) - the model was able to classify with 90.4% accuracy.
+
+• For material type classification (5 classes) - the model was able to classfy with 91.2% accuracy.
+
+• For "cracked" versus "not cracked" classification (2 classes) - the model was able to classify with 81.4% accuracy.
 
 ![Prediction Probabilities At Each Stage Of Classification](/Images/Prediction_Probabilities/Prediction_Probabilities_Slide.jpg)
 
@@ -83,6 +89,10 @@ I analyzed confusion matrix results of the CNN models, then determined accuracy,
    • At a 95% prediction probability cutoff, we only have to manually check 200 images. (80% reduction of work.)
    
    • At a 99% prediction probability cutoff, we only have to manually check 310 images. (69% reduction of work.)
+   
+Given that the model was only able to correctly identify "cracked" images 2 out of every 3 times, I would hesitate to put this model in production at the moment. Automated deficiency detection potentially poses a safety issue if very serious cracking is missed by the algorithm. So before implementing this tool, it would be prudent to gather a larger set of images and spend more time tweaking the CNN architecture to produce more reliable results. I think the model should be correctly identifying 9 out of every 10 "cracked" images before considering putting the model to use in the real-world. 
+
+Another variable to consider is the prediction probability "cutoff" point. How much uncertainty from the model's decision-making are we willing to tolerate? There is an strong positive correlation between the model's prediction probability cutoff percentage and the number of images to be manually checked. As the prediction probability cutoff increases, so do the number of images to be manually checked. So an important question is this: are we more willing to do more manual checking to ensure the safety of building users? Or, are we willing to miss a few cracks observed on the construction site to save more time and money? This should be debated with other practicing professionals to arrive at a consensus.
 
 #
 ### App Demo
