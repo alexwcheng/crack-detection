@@ -61,7 +61,7 @@ Next, I had to define the evaluation metrics for success. Missing deficiencies i
 
 I analyzed confusion matrix results of the CNN models, then determined accuracy, precision, recall, and F1 score metrics. Next, I plotted prediction probabilities for each type of classification. Prediction probabiities are important in crack detection. Architects and engineers want to be certain that they are not missing any significant, potentially dangerous deficiencies. Otherwise, there will be a significant professional liability. So I determined a prediction probability "cutoff" point at which an image would need to be manually checked by a person, since the model is not "confident" enough in its prediction for architects and engineers to trust the prediction completely.
 
-![Prediction_Probabilities](/Images/Prediction_Probabilities/Prediction_Probabilities_Slide.jpg)
+![](Prediction_Probabilities_Slide.jpg)
 
 #
 ### Conclusions
