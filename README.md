@@ -1,6 +1,6 @@
 # Construction Deficiency Detection
 
-![Deficiency-Detection-Demo](Web_Application/Deficiency-Detection-Demo.gif)
+![Title-Slide](/Images/Slides/Title-Slide.jpg)
 
 #
 ### Project File Summary
@@ -32,6 +32,12 @@ The goal of this project is to create an automated tool that can rapidly classif
 1. Is the photo "general" or "specific"?
 2. What type of material is in the photo?
 3. Is this material "cracked" or "not cracked"?
+
+![1](/Images/Slides/1-General-Vs-Specific.jpg)
+
+![2](/Images/Slides/2-Material-Type.jpg)
+
+![3](/Images/Slides/3-Crack-Classification.jpg)
 
 #
 ### Data 
@@ -73,6 +79,11 @@ I analyzed confusion matrix results of the CNN models, then determined accuracy,
    • At a 95% prediction probability cutoff, we only have to manually check 200 images. (80% reduction of work.)
    
    • At a 99% prediction probability cutoff, we only have to manually check 310 images. (69% reduction of work.)
+
+#
+### App Demo
+
+![Deficiency-Detection-Demo](Web_Application/Deficiency-Detection-Demo.gif)
 
 #
 ### Future Work
