@@ -35,8 +35,6 @@ The goal of this project is to create an automated tool that can rapidly classif
 
 ![1](/Images/Slides/1-General-Vs-Specific.jpg)
 
-![2](/Images/Slides/2-Material-Type.jpg)
-
 ![3](/Images/Slides/3-Crack-Classification.jpg)
 
 #
